@@ -9,13 +9,34 @@ import java.util.List;
 @Repository
 public class ProductRepository {
     private List<Product> productData = new ArrayList<>();
-
+    private int productIdCount = 0;
     public Product create(Product product) {
         productData.add(product);
+        product.setProductId(Integer.toString(productIdCount));
+        productIdCount++;
         return product;
     }
 
     public Iterator<Product> findAll() {
         return productData.iterator();
+    }
+    public Product edit(Product productAttribute) {
+        String id = productAttribute.getProductId();
+        String newName = productAttribute.getProductName();
+        int newAmount = productAttribute.getProductQuantity();
+        Product product = findProductbyId(id);
+        product.setProductName(newName);
+        product.setProductQuantity(newAmount);
+        return product;
+    }
+
+    public Product findProductbyId(String id) {
+        for (Product product : productData) {
+            String productId = product.getProductId();
+            if (productId.equals(id)) {
+                return product;
+            }
+        }
+        return null;
     }
 }
