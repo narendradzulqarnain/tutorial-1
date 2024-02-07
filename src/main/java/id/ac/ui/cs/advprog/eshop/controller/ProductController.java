@@ -51,12 +51,15 @@ public class ProductController {
         System.out.println(product.getProductId() + " " + product.getProductName());
 
 
+        return "redirect:/product/list";
+    }
     @PostMapping("/delete/{productId}")
-    public String deleteProduct(@PathVariable String productId) {
+    public String deleteProduct (@PathVariable String productId){
         Product product = service.getProductbyId(productId);
         service.delete(product);
 
         return "redirect:/product/list";
     }
 }
+
 
