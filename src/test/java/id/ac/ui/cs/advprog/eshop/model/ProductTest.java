@@ -11,7 +11,7 @@ public class ProductTest {
         this.product = new Product();
         this.product.setProductId("0");
         this.product.setProductName("Sampo Cap Bambang");
-        this.product.setQuantity(100);
+        this.product.setProductQuantity(100);
         
     }
     @Test

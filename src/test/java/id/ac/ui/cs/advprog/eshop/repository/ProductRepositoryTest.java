@@ -47,15 +47,15 @@ public class ProductRepositoryTest {
     @Test
     void testFindAllIfMoreThanOneProduct() {
         Product product1 = new Product();
-        product.setProductId("0");
-        product.setProductName("Sampo Cap Bambang");
-        product.setProductQuantity(100);
+        product1.setProductId("0");
+        product1.setProductName("Sampo Cap Bambang");
+        product1.setProductQuantity(100);
         productRepository.create(product1);
 
         Product product2 = new Product();
-        product.setProductId("1");
-        product.setProductName("Sampo Cap Usep");
-        product.setProductQuantity(50);
+        product2.setProductId("1");
+        product2.setProductName("Sampo Cap Usep");
+        product2.setProductQuantity(50);
         productRepository.create(product2);
 
         Iterator<Product> productIterator = productRepository.findAll();
