@@ -38,7 +38,7 @@ public class ProductController {
         return "productList";
     }
 
-    @DeleteMapping("/delete/{productId}")
+    @PostMapping("/delete/{productId}")
     public String deleteProduct(@PathVariable String productId) {
         Product product = service.getProductbyId(productId);
         service.delete(product);
