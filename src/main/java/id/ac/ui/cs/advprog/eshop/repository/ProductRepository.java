@@ -9,17 +9,19 @@ import java.util.List;
 @Repository
 public class ProductRepository {
     private List<Product> productData = new ArrayList<>();
+
     private int productIdCount = 0;
+
     public Product create(Product product) {
         productData.add(product);
-        product.setProductId(Integer.toString(productIdCount));
-        productIdCount++;
+        product.setProductId(Integer.toString(productIdCount++));
         return product;
     }
 
     public Iterator<Product> findAll() {
         return productData.iterator();
     }
+
     public Product edit(Product productAttribute) {
         String id = productAttribute.getProductId();
         String newName = productAttribute.getProductName();
@@ -39,4 +41,9 @@ public class ProductRepository {
         }
         return null;
     }
+
+    public void delete(Product product) {
+        productData.remove(product);
+    }
+
 }
