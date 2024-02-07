@@ -19,7 +19,6 @@ public class ProductController {
     @GetMapping("/create")
     public String createProductPage(Model model) {
         Product product = new Product();
-//        product.setProductId(Integer.toString(service.getIdCount()));
         model.addAttribute("product", product);
         return "createProduct";
     }
@@ -28,7 +27,6 @@ public class ProductController {
     @PostMapping("/create")
     public String createProductPost(@ModelAttribute Product product, Model model) {
         service.create(product);
-//        System.out.println(product.getProductId());
         return "redirect:list";
     }
 
@@ -42,8 +40,6 @@ public class ProductController {
     @GetMapping("/edit/{productId}")
     public String editProductPage(@PathVariable String productId, Model model) {
         Product product = service.getProductbyId(productId);
-        System.out.println(productId);
-//        System.out.println(product.getProductId());
         model.addAttribute("product", product);
         return "EditProduct";
     }
