@@ -22,15 +22,10 @@
         <tr th:each="product: ${products}">
             <td th:text="${product.productName}"></td>
             <td th:text="${product.productQuantity}"></td>
-<<<<<<< HEAD
             <td><a th:href="@{'/product/edit/' + ${product.productId}}" class="btn btn-primary">edit</a></td>
-=======
+
             <td><button th:data-name="${product.productId}" th:onclick="deleteProduct(this.getAttribute('data-name'))">delete</button></td>
 
-
-
-
->>>>>>> delete-product
         </tr>
         </tbody>
     </table>
