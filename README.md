@@ -20,11 +20,11 @@ Menurut Bjarne Stroustrup, clean code seharusnya elegant dan efisien, sedangkan 
 2. Ya, implementasi workflow saat ini sudah dapat melakukan <i>testing</i> dan <i>deployment</i> secara otomatis saat ada push atau pull request. Setiap perubahan yang di-push ke repository akan secara otomatis dijalankan <i>test</i>, sehingga sudah memenuhi <i>practice Continuous Integration</i> (CI). <i>Deployment</i> aplikasi juga dilakukan secara otomatis setelah proses <i>testing</i>, sehingga sudah memenuhi <i>practice Continuous Deployment</i> (CD).
 <br>
 <h3>Refleksi Week-3</h3>
-1. - SRP: Setiap class hanya memiliki satu tanggung jawab. Contohnya, class Car hanya digunakan untuk mendefinisikan model. Implementasi CRUD dilakukan oleh repository, logika bisnis oleh service, dan request handling oleh controller.
-- OCP: Menurut saya, software entities pada proyek sudah memenuhi OCP. Fungsi CRUD tidak dapat diubah karena akan mengubah fungsionalitasnya. Namun, fungsi-fungsi tersbut dapat dikembangkan misalnya, membuat fungsi yang dapat menghapus lebih dari satu instance model sekaligus.
-- LSP: Untuk saat ini belum ada class yang menggunakan inheritance, sehingga LSP dapat dikatakan terpenuhi. Saya menghilangkan inheritance pada CarController dan Product Controller karena tidak diperlukan.
-- ISP: Saya mengubah interface CarService menjadi CarServiceCRUD untuk menyesuaikan dan memfokuskan fungsionalitasnya. Hal yang sama juga dilakukan pada interface ProductService agar memenuhi ISP.
-- DIP: CarServiceImpl memiliki abstraksi CarService, begitu juga dengan ProductServiceImpl memiliki abstraksi ProductService.
+1. - SRP: Setiap class hanya memiliki satu tanggung jawab. Contohnya, class Car hanya digunakan untuk mendefinisikan model. Implementasi CRUD dilakukan oleh repository, logika bisnis oleh service, dan request handling oleh controller.<br>
+- OCP: Menurut saya, software entities pada proyek sudah memenuhi OCP. Fungsi CRUD tidak dapat diubah karena akan mengubah fungsionalitasnya. Namun, fungsi-fungsi tersbut dapat dikembangkan misalnya, membuat fungsi yang dapat menghapus lebih dari satu instance model sekaligus.<br>
+- LSP: Untuk saat ini belum ada class yang menggunakan inheritance, sehingga LSP dapat dikatakan terpenuhi. Saya menghilangkan inheritance pada CarController dan Product Controller karena tidak diperlukan.<br>
+- ISP: Saya mengubah interface CarService menjadi CarServiceCRUD untuk menyesuaikan dan memfokuskan fungsionalitasnya. Hal yang sama juga dilakukan pada interface ProductService agar memenuhi ISP.<br>
+- DIP: CarServiceImpl memiliki abstraksi CarService, begitu juga dengan ProductServiceImpl memiliki abstraksi ProductService.<br>
 
 2. Penerapan prinsip SOLID membuat proyek menjadi lebih maintainable. Contohnya, SRP dapat mempermudah proses testing dan debugging karena setiap class memiliki fungsionalitas yang spesifik.
 3. Proyek akan lebih sulit untuk di-maintain jika tidak menerapkan prinsip SOLID. Misalnya, jika kita mengimplementasikan seluruh fungsionalitas program dalam satu class saja, struktur proyek akan menjadi tidak teroganisir dan lebih sulit untuk diperbaiki jika ada kesalahan.
