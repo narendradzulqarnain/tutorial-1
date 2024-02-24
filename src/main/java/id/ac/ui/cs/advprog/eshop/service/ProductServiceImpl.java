@@ -10,7 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 
 @Service
-public class ProductServiceImpl implements ProductService{
+public class ProductServiceImpl implements ProductServiceCRUD{
 
     @Autowired
     private ProductRepository productRepository;
@@ -39,9 +39,8 @@ public class ProductServiceImpl implements ProductService{
 
 
     @Override
-
-    public Product getProductbyId(String id) {
-        return productRepository.findProductbyId(id);
+    public Product getProductById(String id) {
+        return productRepository.findProductById(id);
     }
 
 

@@ -26,13 +26,13 @@ public class ProductRepository {
         String id = productAttribute.getProductId();
         String newName = productAttribute.getProductName();
         int newAmount = productAttribute.getProductQuantity();
-        Product product = findProductbyId(id);
+        Product product = findProductById(id);
         product.setProductName(newName);
         product.setProductQuantity(newAmount);
         return product;
     }
 
-    public Product findProductbyId(String id) {
+    public Product findProductById(String id) {
         for (Product product : productData) {
             String productId = product.getProductId();
             if (productId.equals(id)) {

@@ -80,14 +80,14 @@ public class ProductRepositoryTest {
         product2.setProductQuantity(200);
         productRepository.create(product2);
 
-        assertEquals(product1, productRepository.findProductbyId(product1.getProductId()));
-        assertEquals(product2, productRepository.findProductbyId(product2.getProductId()));
-        assertNotEquals(product1, productRepository.findProductbyId(product2.getProductId()));
+        assertEquals(product1, productRepository.findProductById(product1.getProductId()));
+        assertEquals(product2, productRepository.findProductById(product2.getProductId()));
+        assertNotEquals(product1, productRepository.findProductById(product2.getProductId()));
     }
 
     @Test
     void testFindProductByIdIfProductNotExist() {
-        assertNull(productRepository.findProductbyId("0"));
+        assertNull(productRepository.findProductById("0"));
     }
     @Test
     void testEditProduct() {
@@ -117,6 +117,6 @@ public class ProductRepositoryTest {
         productRepository.create(product1);
 
         productRepository.delete(product1);
-        assertNull(productRepository.findProductbyId(product1.getProductId()));
+        assertNull(productRepository.findProductById(product1.getProductId()));
     }
 }

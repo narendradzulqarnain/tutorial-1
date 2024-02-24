@@ -4,7 +4,7 @@ import id.ac.ui.cs.advprog.eshop.model.Product;
 import java.util.List;
 
 
-public interface ProductService {
+public interface ProductServiceCRUD {
     public Product create(Product product);
     public List<Product> findAll();
 
@@ -12,7 +12,7 @@ public interface ProductService {
     public Product edit(Product product);
 
 
-    public Product getProductbyId(String id);
+    public Product getProductById(String id);
 
     public void delete(Product product);
 
