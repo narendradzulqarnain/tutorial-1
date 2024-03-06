@@ -1,7 +1,9 @@
 package id.ac.ui.cs.advprog.eshop.enums;
 
 import id.ac.ui.cs.advprog.eshop.model.Payment;
+import lombok.Getter;
 
+@Getter
 public enum PaymentStatus {
     SUCCESS("SUCCESS"),
     REJECTED("REJECTED");

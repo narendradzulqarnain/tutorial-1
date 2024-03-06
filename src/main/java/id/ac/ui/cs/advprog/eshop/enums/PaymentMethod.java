@@ -1,5 +1,8 @@
 package id.ac.ui.cs.advprog.eshop.enums;
 
+import lombok.Getter;
+
+@Getter
 public enum PaymentMethod {
     VOUCHER_CODE("VoucherCode"),
     CASH_ON_DELIVERY("CashOnDelivery");
