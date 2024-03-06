@@ -88,10 +88,6 @@ public class PaymentRepositoryTest {
     }
     @Test
     void testFindAllIfRepositoryIsEmpty() {
-        for (Payment payment : payments) {
-            paymentRepository.save(payment);
-        }
-
         List<Payment> paymentList = paymentRepository.findAll();
         assertTrue(paymentList.isEmpty());
     }
