@@ -28,3 +28,5 @@ Menurut Bjarne Stroustrup, clean code seharusnya elegant dan efisien, sedangkan 
 
 2. Penerapan prinsip SOLID membuat proyek menjadi lebih maintainable. Contohnya, SRP dapat mempermudah proses testing dan debugging karena setiap class memiliki fungsionalitas yang spesifik.
 3. Proyek akan lebih sulit untuk di-maintain jika tidak menerapkan prinsip SOLID. Misalnya, jika kita mengimplementasikan seluruh fungsionalitas program dalam satu class saja, struktur proyek akan menjadi tidak teroganisir dan lebih sulit untuk diperbaiki jika ada kesalahan.
+<h3>Refleksi Week-4</h3>
+2. Beberapa test case masih bersifat dependent dengan test case lainnya, contoh: testSave untuk product repository. Test ini masih dependent terhadap findById. Kedepannya, saya perlu membuat test yang independent dan tidak bergantung pada test lainnya agar dapat memenuhi F.I.R.S.T principle.
