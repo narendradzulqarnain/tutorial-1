@@ -28,7 +28,7 @@ public class PaymentServiceImplTest {
     @Mock
     PaymentRepository paymentRepository;
     List<Payment> payments;
-    Map<Payment,Order> paymentOrderMap
+    Map<Payment,Order> paymentOrderMap;
 
     @BeforeEach
     void setup() {
