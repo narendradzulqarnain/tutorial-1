@@ -66,7 +66,7 @@ public class PaymentServiceImplTest {
         products.add(product1);
         Order order = new Order("13652556-012a-4c07-b546-54eb1396d79b", products, 1708560000L, "Safira Sudrajat");
         Payment payment = paymentService.addPayment(order, "VoucherCode", payments.get(1).getPaymentData());
-        Payment result = paymentService.setStatus(payment, PaymentStatus.SUCCESS);
+        Payment result = paymentService.setStatus(payment, PaymentStatus.SUCCESS.getValue());
         assertEquals(PaymentStatus.SUCCESS.getValue(), payment.getStatus());
         assertEquals(OrderStatus.SUCCESS.getValue(), order.getStatus());
     }
@@ -80,7 +80,7 @@ public class PaymentServiceImplTest {
         products.add(product1);
         Order order = new Order("13652556-012a-4c07-b546-54eb1396d79b", products, 1708560000L, "Safira Sudrajat");
         Payment payment = paymentService.addPayment(order, "VoucherCode", payments.getFirst().getPaymentData());
-        Payment result = paymentService.setStatus(payment, PaymentStatus.REJECTED);
+        Payment result = paymentService.setStatus(payment, PaymentStatus.REJECTED.getValue());
         assertEquals(PaymentStatus.REJECTED.getValue(), payment.getStatus());
         assertEquals(OrderStatus.FAILED.getValue(), order.getStatus());
     }
