@@ -22,28 +22,37 @@ public class PaymentTest {
     }
     @Test
     void testCreatePaymentInvalidStatus() {
+        Map<String, String> paymentData = new HashMap<>();
+        paymentData.put("voucherCode","ESHOP1234ABC5678");
         assertThrows(IllegalArgumentException.class, () -> {
             Payment payment = new Payment("abcdefg", "VoucherCode", "SCAMMED",
-                    (new HashMap<>()).put("voucherCode","ESHOP1234ABC5678"));
+                    paymentData);
         });
     }
     @Test
     void testCreatePaymentRejectedStatus() {
+        Map<String, String> paymentData = new HashMap<>();
+        paymentData.put("voucherCode","ESHOP1234ABC5678");
         Payment payment = new Payment("abcdefg", "VoucherCode", "REJECTED",
-                (new HashMap<>()).put("voucherCode","ESHOP1234ABC5678"));
+                paymentData);
         assertEquals("REJECTED", payment.getStatus());
     }
     @Test
     void testCreatePaymentCashOnDeliveryMethod() {
+        Map<String, String> paymentData = new HashMap<>();
+        paymentData.put("address","Depok");
+        paymentData.put("deliveryFee", "1000000");
         Payment payment = new Payment("abcdefg", "CashOnDelivery", "SUCCESS",
-                (new HashMap<>()).put("voucherCode","ESHOP1234ABC5678"));
+                paymentData);
         assertEquals("CashOnDelivery", payment.getMethod());
     }
     @Test
     void testCreatePaymentInvalidMethod() {
+        Map<String, String> paymentData = new HashMap<>();
+        paymentData.put("voucherCode","ESHOP1234ABC5678");
         assertThrows(IllegalArgumentException.class, () -> {
             Payment payment = new Payment("abcdefg", "Ngutang", "SUCCESS",
-                    (new HashMap<>()).put("voucherCode","ESHOP1234ABC5678"));
+                    paymentData);
         });
     }
 }
